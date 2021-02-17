@@ -78,6 +78,9 @@ export PATH=$PATH:$GOROOT/bin
 ## GOPATH
 export GOPATH=$HOME/dev/golang/workspace
 export PATH=$PATH:$GOPATH/bin
+
+## GOBIN
+export GOBIN=${GOPATH}/bin
 ```
 
 
@@ -97,6 +100,7 @@ go env
 ```
 
 * `GOPATH="/home/<your-usr-name>/dev/golang/workspace"`
+* `GOBIN="/home/<your-usr-name>/dev/golang/workspace/bin"`
 * `GOROOT="/home/<your-usr-name>/compilers/go/go1.15.7.linux-amd64/go"`
 
 
