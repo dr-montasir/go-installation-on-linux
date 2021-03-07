@@ -16,8 +16,8 @@ cd compilers/go
 ### VERSION 
 
 ```bash
-mkdir go1.15.7.linux-amd64
-cd go1.15.7.linux-amd64
+mkdir go1.16.linux-amd64
+cd go1.16.linux-amd64
 ```
 
 
@@ -25,21 +25,21 @@ cd go1.15.7.linux-amd64
 ### DOWNLOAD
 
 ```bash
-wget https://dl.google.com/go/go1.15.7.linux-amd64.tar.gz
+wget https://dl.google.com/go/go1.16.linux-amd64.tar.gz
 ```
 
-* Write the command `dir` then hit `Enter` to check if the folder `go1.15.7.linux-amd64.tar.gz` is completely downloaded.
+* Write the command `dir` then hit `Enter` to check if the folder `go1.16.linux-amd64.tar.gz` is completely downloaded.
 
 
 
 ### EXTRACT & REMOVE
 
 ```bash
-tar -xvf go1.15.7.linux-amd64.tar.gz
+tar -xvf go1.16.linux-amd64.tar.gz
 ```
 
 ```bash
-rm go1.15.7.linux-amd64.tar.gz
+rm go1.16.linux-amd64.tar.gz
 ```
 
 
@@ -72,7 +72,7 @@ gedit ~/.bashrc
 ```bash
 ## Changes made to the .bashrc file by myself
 ## GOROOT
-export GOROOT=$HOME/compilers/go/go1.15.7.linux-amd64/go
+export GOROOT=$HOME/compilers/go/go1.16.linux-amd64/go
 export PATH=$PATH:$GOROOT/bin
 
 ## GOPATH
@@ -93,7 +93,7 @@ Close the terminal and open it again
 go version
 ```
 
-* `go version go1.15.7 linux/amd64`
+* `go version go1.16 linux/amd64`
 
 ```go
 go env
@@ -101,7 +101,7 @@ go env
 
 * `GOPATH="/home/<your-usr-name>/dev/golang/workspace"`
 * `GOBIN="/home/<your-usr-name>/dev/golang/workspace/bin"`
-* `GOROOT="/home/<your-usr-name>/compilers/go/go1.15.7.linux-amd64/go"`
+* `GOROOT="/home/<your-usr-name>/compilers/go/go1.16.linux-amd64/go"`
 
 
 
