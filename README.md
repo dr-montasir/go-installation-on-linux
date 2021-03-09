@@ -183,6 +183,59 @@ http://localhost:1400/api/courses
 
 
 
+#### How to test the project outside of GOPATH?
+
+```bash
+cd ~/Desktop
+git clone https://github.com/dr-montasir/go-rest-api.git
+cd go-rest-api/go-mock-rest-api
+go build
+```
+
+`go: cannot find main module, but found .git/config in /home/usr-name/Desktop/go-rest-api
+	to create a module there, run:
+	cd .. && go mod init`
+
+```GO
+go mod init
+```
+
+`go: cannot determine module path for source directory /home/usr-name/Desktop/go-rest-api/go-mock-rest-api (outside GOPATH, module path must be specified)`
+
+`Example usage:
+	'go mod init example.com/m' to initialize a v0 or v1 module
+	'go mod init example.com/m/v2' to initialize a v2 module`
+
+```GO
+go mod init go-mock-rest-api
+```
+
+`go: creating new go.mod: module go-mock-rest-api
+go: to add module requirements and sums:
+	go mod tidy`
+
+```GO
+go mod tidy
+```
+
+`go: finding module for package github.com/gorilla/mux
+go: found github.com/gorilla/mux in github.com/gorilla/mux v1.8.0`
+
+```GO
+go build
+```
+
+OR
+
+```GO
+go build -o alternative-project-name main.go
+```
+
+
+
+
+
+
 ### OLD VERSIONS
 
 * **[go1.15.7 linux/amd64](https://github.com/dr-montasir/go-installation-on-linux/blob/master/versions/go1.15.7.linux-amd64.md)**
