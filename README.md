@@ -128,7 +128,7 @@ go build
 
 The terminal will return the following message:
 
-````bash
+```bash
 go: cannot find main module, but found .git/config in /home/usr-name/dev/golang/workspace/src/github.com/your-github-name/go-rest-api
 	to create a module there, run:
 	cd .. && go mod init
