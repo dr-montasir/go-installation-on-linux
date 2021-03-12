@@ -48,6 +48,7 @@ rm go1.16.2.linux-amd64.tar.gz
 `IF there is no such file or directory "~/dev/golang/workspace", then create this directory`
 
 ```bash
+cd ~
 mkdir {dev,dev/golang,dev/golang/workspace}
 ```
 
