@@ -109,6 +109,8 @@ export PATH=$PATH:$GOPATH/bin
 export GOBIN=${GOPATH}/bin
 ```
 
+***`Note: `*** `only one version must be active`
+
 
 
 ### CHECK
