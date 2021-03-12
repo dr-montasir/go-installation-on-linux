@@ -16,7 +16,7 @@ cd compilers/go
 ### VERSION 
 
 ```bash
-mkdir go1.16.2.linux-amd64 && cd go1.16.2.linux-amd64
+mkdir go1.16.linux-amd64 && cd go1.16.linux-amd64
 ```
 
 
@@ -24,56 +24,32 @@ mkdir go1.16.2.linux-amd64 && cd go1.16.2.linux-amd64
 ### DOWNLOAD
 
 ```bash
-wget https://dl.google.com/go/go1.16.2.linux-amd64.tar.gz
+wget https://dl.google.com/go/go1.16.linux-amd64.tar.gz
 ```
 
-* Write the command `dir` then hit `Enter` to check if the folder `go1.16.2.linux-amd64.tar.gz` is completely downloaded.
+* Write the command `dir` then hit `Enter` to check if the folder `go1.16.linux-amd64.tar.gz` is completely downloaded.
 
 
 
 ### EXTRACT & REMOVE
 
 ```bash
-tar -xvf go1.16.2.linux-amd64.tar.gz
+tar -xvf go1.16.linux-amd64.tar.gz
 ```
 
 ```bash
-rm go1.16.2.linux-amd64.tar.gz
+rm go1.16.linux-amd64.tar.gz
 ```
 
 
 
 ### WORK SPACE
 
-`IF there is no such file or directory "~/dev/golang/workspace", then create this directory`
-
 ```bash
-mkdir {dev,dev/golang,dev/golang/workspace}
-```
-
-`Or go to the Golang development directory like so`
-
-```bash
-cd ~/dev/golang/workspace
-```
-**`Workspace required to enable Golang versions`**
-
-```bash
-mkdir go1.16.2 && cd go1.16.2
+cd ~
+mkdir dev/golang/workspace
+cd dev/golang/workspace
 mkdir {bin,pkg,src,src/github.com,src/github.com/your-github-name}
-```
-`An example of what a workspace looks like`
-
-```bash
-workspace
-├── go1.15.7
-├── go1.16
-└── go1.16.2
-    ├── bin
-    ├── pkg
-    └── src
-        └── github.com
-            └── your-github-name
 ```
 
 
@@ -97,11 +73,11 @@ gedit ~/.bashrc
 ```bash
 ## Changes made to the .bashrc file by myself
 ## GOROOT
-export GOROOT=$HOME/compilers/go/go1.16.2.linux-amd64/go
+export GOROOT=$HOME/compilers/go/go1.16.linux-amd64/go
 export PATH=$PATH:$GOROOT/bin
 
 ## GOPATH
-export GOPATH=$HOME/dev/golang/workspace/go1.16.2
+export GOPATH=$HOME/dev/golang/workspace
 export PATH=$PATH:$GOPATH/bin
 
 ## GOBIN
@@ -118,19 +94,19 @@ Close the terminal and open it again
 go version
 ```
 
-* `go version go1.16.2 linux/amd64`
+* `go version go1.16 linux/amd64`
 
 ```go
 go env
 ```
 
-* `GOPATH="/home/<your-usr-name>/dev/golang/workspace/go1.16.2"`
-* `GOBIN="/home/<your-usr-name>/dev/golang/workspace/go1.16.2/bin"`
-* `GOROOT="/home/<your-usr-name>/compilers/go/go1.16.2.linux-amd64/go"`
+* `GOPATH="/home/<your-usr-name>/dev/golang/workspace"`
+* `GOBIN="/home/<your-usr-name>/dev/golang/workspace/bin"`
+* `GOROOT="/home/<your-usr-name>/compilers/go/go1.16.linux-amd64/go"`
 * `GOCACHE="/home/<your-usr-name>/.cache/go-build"`
 * `GOENV="/home/<your-usr-name>/.config/go/env"`
-* **`GOMODCACHE="/home/<your-usr-name>/dev/golang/workspace/go1.16.2/pkg/mod"`**
-* **`GOTOOLDIR="/home/montasir/compilers/go/go1.16.2.linux-amd64/go/pkg/tool/linux_amd64"`**
+* **`GOMODCACHE="/home/<your-usr-name>/dev/golang/workspace/pkg/mod"`**
+* **`GOTOOLDIR="/home/montasir/compilers/go/go1.16.linux-amd64/go/pkg/tool/linux_amd64"`**
 
 
 
@@ -138,7 +114,7 @@ go env
 
 ```bash
 go get github.com/gorilla/mux
-cd dev/golang/workspace/go1.16.2/src/github.com/your-github-name
+cd dev/golang/workspace/src/github.com/your-github-name
 git clone https://github.com/dr-montasir/go-rest-api.git
 ```
 
@@ -153,7 +129,7 @@ go build
 The terminal will return the following message:
 
 ```bash
-go: cannot find main module, but found .git/config in /home/usr-name/dev/golang/workspace/go1.16.2/src/github.com/your-github-name/go-rest-api
+go: cannot find main module, but found .git/config in /home/usr-name/dev/golang/workspace/src/github.com/your-github-name/go-rest-api
 	to create a module there, run:
 	cd .. && go mod init
 ```
@@ -258,8 +234,9 @@ go build -o alternative-project-name main.go
 
 
 
+
+
 ### OLD VERSIONS
 
-* **[go1.16 linux/amd64](https://github.com/dr-montasir/go-installation-on-linux/blob/master/versions/go1.16.linux-amd64.md)**
 * **[go1.15.7 linux/amd64](https://github.com/dr-montasir/go-installation-on-linux/blob/master/versions/go1.15.7.linux-amd64.md)**
 
