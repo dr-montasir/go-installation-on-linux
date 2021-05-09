@@ -16,7 +16,7 @@ cd compilers/go
 ### VERSION 
 
 ```bash
-mkdir go1.16.4.linux-amd64 && cd go1.16.4.linux-amd64
+mkdir go1.16.2.linux-amd64 && cd go1.16.2.linux-amd64
 ```
 
 
@@ -24,21 +24,21 @@ mkdir go1.16.4.linux-amd64 && cd go1.16.4.linux-amd64
 ### DOWNLOAD
 
 ```bash
-wget https://dl.google.com/go/go1.16.4.linux-amd64.tar.gz
+wget https://dl.google.com/go/go1.16.2.linux-amd64.tar.gz
 ```
 
-* Write the command `dir` then hit `Enter` to check if the folder `go1.16.4.linux-amd64.tar.gz` is completely downloaded.
+* Write the command `dir` then hit `Enter` to check if the folder `go1.16.2.linux-amd64.tar.gz` is completely downloaded.
 
 
 
 ### EXTRACT & REMOVE
 
 ```bash
-tar -xvf go1.16.4.linux-amd64.tar.gz
+tar -xvf go1.16.2.linux-amd64.tar.gz
 ```
 
 ```bash
-rm go1.16.4.linux-amd64.tar.gz
+rm go1.16.2.linux-amd64.tar.gz
 ```
 
 
@@ -60,7 +60,7 @@ cd ~/dev/golang/workspace
 **`Workspace required to enable Golang versions`**
 
 ```bash
-mkdir go1.16.4 && cd go1.16.4
+mkdir go1.16.2 && cd go1.16.2
 mkdir {bin,pkg,src,src/github.com,src/github.com/your-github-name}
 ```
 `An example of what a workspace looks like`
@@ -69,9 +69,7 @@ mkdir {bin,pkg,src,src/github.com,src/github.com/your-github-name}
 workspace
 ├── go1.15.7
 ├── go1.16
-├── go1.16.2
-├── go1.16.3
-└── go1.16.4
+└── go1.16.2
     ├── bin
     ├── pkg
     └── src
@@ -100,11 +98,11 @@ gedit ~/.bashrc
 ```bash
 ## Changes made to the .bashrc file by myself
 ## GOROOT
-export GOROOT=$HOME/compilers/go/go1.16.4.linux-amd64/go
+export GOROOT=$HOME/compilers/go/go1.16.2.linux-amd64/go
 export PATH=$PATH:$GOROOT/bin
 
 ## GOPATH
-export GOPATH=$HOME/dev/golang/workspace/go1.16.4
+export GOPATH=$HOME/dev/golang/workspace/go1.16.2
 export PATH=$PATH:$GOPATH/bin
 
 ## GOBIN
@@ -123,20 +121,19 @@ Close the terminal and open it again
 go version
 ```
 
-* `go version go1.16.4 linux/amd64`
+* `go version go1.16.2 linux/amd64`
 
 ```go
 go env
 ```
 
-* `GO111MODULE="auto"`
-* `GOPATH="/home/<your-usr-name>/dev/golang/workspace/go1.16.4"`
-* `GOBIN="/home/<your-usr-name>/dev/golang/workspace/go1.16.4/bin"`
-* `GOROOT="/home/<your-usr-name>/compilers/go/go1.16.4.linux-amd64/go"`
+* `GOPATH="/home/<your-usr-name>/dev/golang/workspace/go1.16.2"`
+* `GOBIN="/home/<your-usr-name>/dev/golang/workspace/go1.16.2/bin"`
+* `GOROOT="/home/<your-usr-name>/compilers/go/go1.16.2.linux-amd64/go"`
 * `GOCACHE="/home/<your-usr-name>/.cache/go-build"`
 * `GOENV="/home/<your-usr-name>/.config/go/env"`
-* **`GOMODCACHE="/home/<your-usr-name>/dev/golang/workspace/go1.16.4/pkg/mod"`**
-* **`GOTOOLDIR="/home/montasir/compilers/go/go1.16.4.linux-amd64/go/pkg/tool/linux_amd64"`**
+* **`GOMODCACHE="/home/<your-usr-name>/dev/golang/workspace/go1.16.2/pkg/mod"`**
+* **`GOTOOLDIR="/home/montasir/compilers/go/go1.16.2.linux-amd64/go/pkg/tool/linux_amd64"`**
 
 
 
@@ -144,12 +141,47 @@ go env
 
 ```bash
 go get github.com/gorilla/mux
-cd dev/golang/workspace/go1.16.4/src/github.com/your-github-name
+cd dev/golang/workspace/go1.16.2/src/github.com/your-github-name
 git clone https://github.com/dr-montasir/go-rest-api.git
 ```
 
 ```bash
 cd go-rest-api/go-mock-rest-api
+```
+
+```GO
+go build
+```
+
+The terminal will return the following message:
+
+```bash
+go: cannot find main module, but found .git/config in /home/usr-name/dev/golang/workspace/go1.16.2/src/github.com/your-github-name/go-rest-api
+	to create a module there, run:
+	cd .. && go mod init
+```
+
+```GO
+go mod init
+```
+
+The terminal again will return the next message:
+
+```bash
+go: creating new go.mod: module github.com/your-github-name/go-rest-api/go-mock-rest-api
+go: to add module requirements and sums:
+	go mod tidy
+```
+
+```GO
+go mod tidy
+```
+
+The terminal will inform about the presence of the package `gorilla/mux`
+
+```bash
+go: finding module for package github.com/gorilla/mux
+go: found github.com/gorilla/mux in github.com/gorilla/mux v1.8.0
 ```
 
 ```GO
@@ -184,7 +216,37 @@ http://localhost:1400/api/courses
 cd ~/Desktop
 git clone https://github.com/dr-montasir/go-rest-api.git
 cd go-rest-api/go-mock-rest-api
+go build
 ```
+
+`go: cannot find main module, but found .git/config in /home/usr-name/Desktop/go-rest-api
+	to create a module there, run:
+	cd .. && go mod init`
+
+```GO
+go mod init
+```
+
+`go: cannot determine module path for source directory /home/usr-name/Desktop/go-rest-api/go-mock-rest-api (outside GOPATH, module path must be specified)`
+
+`Example usage:
+	'go mod init example.com/m' to initialize a v0 or v1 module
+	'go mod init example.com/m/v2' to initialize a v2 module`
+
+```GO
+go mod init go-mock-rest-api
+```
+
+`go: creating new go.mod: module go-mock-rest-api
+go: to add module requirements and sums:
+	go mod tidy`
+
+```GO
+go mod tidy
+```
+
+`go: finding module for package github.com/gorilla/mux
+go: found github.com/gorilla/mux in github.com/gorilla/mux v1.8.0`
 
 ```GO
 go build
@@ -201,7 +263,6 @@ go build -o alternative-project-name main.go
 
 ### OLD VERSIONS
 
-* **[go1.16.2 linux/amd64](https://github.com/dr-montasir/go-installation-on-linux/blob/master/versions/go1.16.2.linux-amd64.md)**
 * **[go1.16 linux/amd64](https://github.com/dr-montasir/go-installation-on-linux/blob/master/versions/go1.16.linux-amd64.md)**
 * **[go1.15.7 linux/amd64](https://github.com/dr-montasir/go-installation-on-linux/blob/master/versions/go1.15.7.linux-amd64.md)**
 
