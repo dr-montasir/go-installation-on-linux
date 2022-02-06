@@ -12,25 +12,25 @@ cd compilers/go
 ### VERSION
 
 ```bash
-mkdir go1.17.6.linux-amd64 && cd go1.17.6.linux-amd64
+mkdir go1.16.4.linux-amd64 && cd go1.16.4.linux-amd64
 ```
 
 ### DOWNLOAD
 
 ```bash
-wget https://dl.google.com/go/go1.17.6.linux-amd64.tar.gz
+wget https://dl.google.com/go/go1.16.4.linux-amd64.tar.gz
 ```
 
-- Write the command `dir` then hit `Enter` to check if the folder `go1.17.6.linux-amd64.tar.gz` is completely downloaded.
+- Write the command `dir` then hit `Enter` to check if the folder `go1.16.4.linux-amd64.tar.gz` is completely downloaded.
 
 ### EXTRACT & REMOVE
 
 ```bash
-tar -xvf go1.17.6.linux-amd64.tar.gz
+tar -xvf go1.16.4.linux-amd64.tar.gz
 ```
 
 ```bash
-rm go1.17.6.linux-amd64.tar.gz
+rm go1.16.4.linux-amd64.tar.gz
 ```
 
 ### WORK SPACE
@@ -51,7 +51,7 @@ cd ~/dev/golang/workspace
 **`Workspace required to enable Golang versions`**
 
 ```bash
-mkdir go1.17.6 && cd go1.17.6
+mkdir go1.16.4 && cd go1.16.4
 mkdir {bin,pkg,src,src/github.com,src/github.com/your-github-name}
 ```
 
@@ -63,8 +63,7 @@ workspace
 ├── go1.16
 ├── go1.16.2
 ├── go1.16.3
-├── go1.16.4
-└── go1.17.6
+└── go1.16.4
     ├── bin
     ├── pkg
     └── src
@@ -91,11 +90,11 @@ gedit ~/.bashrc
 ```bash
 ## Changes made to the .bashrc file by myself
 ## GOROOT
-export GOROOT=$HOME/compilers/go/go1.17.6.linux-amd64/go
+export GOROOT=$HOME/compilers/go/go1.16.4.linux-amd64/go
 export PATH=$PATH:$GOROOT/bin
 
 ## GOPATH
-export GOPATH=$HOME/dev/golang/workspace/go1.17.6
+export GOPATH=$HOME/dev/golang/workspace/go1.16.4
 export PATH=$PATH:$GOPATH/bin
 
 ## GOBIN
@@ -112,26 +111,26 @@ Close the terminal and open it again
 go version
 ```
 
-- `go version go1.17.6 linux/amd64`
+- `go version go1.16.4 linux/amd64`
 
 ```go
 go env
 ```
 
 - `GO111MODULE="auto"`
-- `GOPATH="/home/<your-usr-name>/dev/golang/workspace/go1.17.6"`
-- `GOBIN="/home/<your-usr-name>/dev/golang/workspace/go1.17.6/bin"`
-- `GOROOT="/home/<your-usr-name>/compilers/go/go1.17.6.linux-amd64/go"`
+- `GOPATH="/home/<your-usr-name>/dev/golang/workspace/go1.16.4"`
+- `GOBIN="/home/<your-usr-name>/dev/golang/workspace/go1.16.4/bin"`
+- `GOROOT="/home/<your-usr-name>/compilers/go/go1.16.4.linux-amd64/go"`
 - `GOCACHE="/home/<your-usr-name>/.cache/go-build"`
 - `GOENV="/home/<your-usr-name>/.config/go/env"`
-- **`GOMODCACHE="/home/<your-usr-name>/dev/golang/workspace/go1.17.6/pkg/mod"`**
-- **`GOTOOLDIR="/home/montasir/compilers/go/go1.17.6.linux-amd64/go/pkg/tool/linux_amd64"`**
+- **`GOMODCACHE="/home/<your-usr-name>/dev/golang/workspace/go1.16.4/pkg/mod"`**
+- **`GOTOOLDIR="/home/montasir/compilers/go/go1.16.4.linux-amd64/go/pkg/tool/linux_amd64"`**
 
 ### TEST PROJECT
 
 ```bash
 go get github.com/gorilla/mux
-cd dev/golang/workspace/go1.17.6/src/github.com/your-github-name
+cd dev/golang/workspace/go1.16.4/src/github.com/your-github-name
 git clone https://github.com/dr-montasir/go-rest-api.git
 ```
 
@@ -196,9 +195,8 @@ OR
 go build -o alternative-project-name main.go
 ```
 
-### PREVIOUS VERSIONS
+### OLD VERSIONS
 
-- **[go1.16.4 linux/amd64](https://github.com/dr-montasir/go-installation-on-linux/blob/master/versions/go1.16.4.linux-amd64.md)**
 - **[go1.16.2 linux/amd64](https://github.com/dr-montasir/go-installation-on-linux/blob/master/versions/go1.16.2.linux-amd64.md)**
 - **[go1.16 linux/amd64](https://github.com/dr-montasir/go-installation-on-linux/blob/master/versions/go1.16.linux-amd64.md)**
 - **[go1.15.7 linux/amd64](https://github.com/dr-montasir/go-installation-on-linux/blob/master/versions/go1.15.7.linux-amd64.md)**
